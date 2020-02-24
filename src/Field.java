@@ -9,10 +9,9 @@ public class Field extends TrackTeam {
         int[] newArr = new int[numOfAthletes];
         for(int i = 0; i < numOfAthletes; i++) {    //simulates a throwing event
             distance = (int) (Math.random() * 60);
-            newArr[i] = distance;
-            if (distance < 240) throwDistances[i] = 0;
+            newArr[i] = distance * 12;
         }
-        throwDistances = sortDistances(newArr);
+        throwDistances = newArr.clone();
         return throwDistances;
     }
 }

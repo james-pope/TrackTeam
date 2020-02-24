@@ -20,22 +20,18 @@ public class TrackTeam {
     public String getTeamName() {
         return TeamName;
     }
-    public int[] sortDistances(int[] arr){
-        int temp;
-        int[] newArr = new int[arr.length];
-        for (int i = 0; i < arr.length; i++)     //sorts distances in descending order
-        {
-            for (int j = i + 1; j < arr.length; j++)
-            {
-                if (newArr[i] < newArr[j])
-                {
-                    temp = newArr[i];
-                    newArr[i] = newArr[j];
-                    newArr[j] = temp;
+    public int[] sortDistances(int[] distances){
+        int[] arr = new int[distances.length];
+        for (int i=0; i<arr.length;i++) {
+            for (int k=i;k<arr.length;k++) {
+                if(arr[i] > arr[k]) {
+                    int temp=arr[k];
+                    arr[k]=arr[i];
+                    arr[i]=temp;
                 }
             }
         }
-        return newArr;
+        return arr;
     }
     public int[] Throw(int numOfThrowers){
         Field field = new Field();
