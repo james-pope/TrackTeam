@@ -12,18 +12,7 @@ public class Field extends TrackTeam {
             newArr[i] = distance;
             if (distance < 240) throwDistances[i] = 0;
         }
-        for (int i = 0; i < numOfAthletes; i++)
-        {
-            for (int j = i + 1; j < numOfAthletes; j++)
-            {
-                if (a[i] < a[j])
-                {
-                    temp = a[i];
-                    a[i] = a[j];
-                    a[j] = temp;
-                }
-            }
-        }
+        throwDistances = sortDistances(newArr);
         return throwDistances;
     }
 }
