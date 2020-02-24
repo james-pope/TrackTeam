@@ -20,21 +20,11 @@ public class TrackTeam {
     public String getTeamName() {
         return TeamName;
     }
-    public int[] sortDistances(int[] distances){
-        int[] arr = new int[distances.length];
-        for (int i=0; i<arr.length;i++) {
-            for (int k=i;k<arr.length;k++) {
-                if(arr[i] > arr[k]) {
-                    int temp=arr[k];
-                    arr[k]=arr[i];
-                    arr[i]=temp;
-                }
-            }
-        }
-        return arr;
-    }
     public int[] Throw(int numOfThrowers){
-        Field field = new Field();
+        Field field = new Field("ShotPut");
         return field.Throw(numOfThrowers);
+    }
+    public void runField(){
+        
     }
 }

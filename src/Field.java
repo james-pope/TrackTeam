@@ -1,9 +1,22 @@
 public class Field extends TrackTeam {
-    private int[] throwDistances;
+    private int[] Distances;
     private int distance;
     private int inches;
-    public Field() {
-        super();
+    private String event;
+    public Field(String Event) {
+        event = Event;
+    }
+    public void sortDistances() {
+        int[] arr = new int[Distances.length];
+        for (int i = 0; i < Distances.length; i++) {
+            for (int k = i + 1; k < Distances.length; k++) {
+                if (Distances[i] < Distances[k]) {
+                    int temp = Distances[i];
+                    Distances[i] = Distances[k];
+                    Distances[k] = temp;
+                }
+            }
+        }
     }
     public int[] Throw(int numOfAthletes){
         int[] newArr = new int[numOfAthletes];
@@ -11,7 +24,8 @@ public class Field extends TrackTeam {
             distance = (int) (Math.random() * 60);
             newArr[i] = distance * 12;
         }
-        throwDistances = newArr.clone();
-        return throwDistances;
+        Distances = newArr.clone();
+        sortDistances();
+        return Distances;
     }
 }
